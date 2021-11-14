@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "TDCS Viewer",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "tdcs-viewer34.png"
+  },
+  "icons": {
+    "128": "tdcs-viewer128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["tdcs-viewer128.png", "tdcs-viewer34.png"],
+      "matches": []
+    }
+  ]
+}

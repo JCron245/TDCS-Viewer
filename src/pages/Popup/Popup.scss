@@ -1,0 +1,144 @@
+.app {
+	background-color: #002133;
+	bottom: 0px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	left: 0px;
+	max-width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	padding: 0.5rem;
+	position: absolute;
+	right: 0px;
+	text-align: center;
+	top: 0px;
+
+	.main {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-bottom: 0.5rem;
+
+		.app-fetch-options {
+			align-items: flex-end;
+			background-color: #f8f8f8;
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 0.5rem;
+			padding: 0.5rem 1rem;
+		}
+
+		.app-filter-options {
+			align-items: flex-end;
+			background-color: #f8f8f8;
+			display: flex;
+			justify-content: space-between;
+			padding: 0.5rem 1rem;
+		}
+
+		.label {
+			align-items: flex-start;
+			display: flex;
+			flex-direction: column;
+			font-size: 1rem;
+			margin: 0;
+
+			p {
+				margin: 0;
+			}
+
+			.required {
+				color: red;
+				margin-right: 0.5ch;
+			}
+		}
+
+		.version {
+			.app-input {
+				width: 10ch;
+			}
+		}
+
+		.app-select {
+			cursor: pointer;
+			height: 2rem;
+			padding: 0.25rem;
+		}
+
+		.app-input {
+			border: 1px solid #000;
+			height: 2rem;
+		}
+
+		.error-box {
+			color: darkred;
+			margin: 0;
+			width: 20ch;
+		}
+
+		.btn-container {
+			display: flex;
+		}
+	}
+
+	.app-btn {
+		background-color: #0073d1;
+		border-radius: 0.25rem;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+		padding: 0.5rem 1rem;
+		&:hover {
+			background-color: #0062b2;
+		}
+	}
+
+	.app-btn-alt {
+		background-color: #d8dde6;
+		color: #004366;
+		margin-left: 1ch;
+		&:hover {
+			background-color: #63738a;
+			color: #fff;
+		}
+	}
+
+	.code {
+		background-color: #f8f8f8;
+		box-sizing: border-box;
+		display: flex;
+		flex-grow: 1;
+		font-family: monospace, monospace;
+		font-weight: bold;
+		overflow-y: scroll;
+		margin: 0;
+		padding: 0.5rem;
+		text-align: left;
+		width: 100%;
+	}
+
+	.copy-icon-container {
+		align-items: center;
+		border-radius: 0.5rem;
+		bottom: 1.75rem;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		padding: 0.5rem;
+		position: fixed;
+		right: 1.75rem;
+	}
+
+	.copy-icon {
+		width: 1.5rem;
+		height: 1.5rem;
+		fill: white;
+	}
+
+	.timestamp {
+		font-size: 0.7rem;
+		position: fixed;
+		right: 1rem;
+	}
+}
