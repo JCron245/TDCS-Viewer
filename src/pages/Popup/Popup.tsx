@@ -100,7 +100,12 @@ export const Popup = () => {
 			});
 	};
 
-	const bugReport = () => {};
+	const bugReport = () => {
+		window.open(
+			'https://github.com/JCron245/TDCS-Viewer/issues/new?assignees=JCron245&labels=bug&template=bug_report.md&title=',
+			'_blank'
+		);
+	};
 
 	return (
 		<div className="app">
@@ -191,7 +196,7 @@ export const Popup = () => {
 			)}
 
 			<button
-				className="app-btn copy-icon-container"
+				className="app-btn bug-icon-container"
 				onClick={bugReport}
 				title="Report A Bug"
 			>
