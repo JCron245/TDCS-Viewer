@@ -151,7 +151,12 @@ export const Popup = () => {
 					</label>
 					<p className="error-box">{error}</p>
 					<div className="btn-container">
-						<button type="button" className="app-btn" onClick={fetchTdcs}>
+						<button
+							type="button"
+							className="app-btn"
+							title="Fetch TDCS Config"
+							onClick={fetchTdcs}
+						>
 							Get TDCS
 						</button>
 					</div>
@@ -169,12 +174,18 @@ export const Popup = () => {
 						/>
 					</label>
 					<div className="btn-container">
-						<button type="submit" className="app-btn" onClick={filterTdcs}>
+						<button
+							type="submit"
+							className="app-btn"
+							title="Filter Tdcs"
+							onClick={filterTdcs}
+						>
 							Filter
 						</button>
 						<button
 							type="button"
 							className="app-btn app-btn-alt"
+							title="Clear Filter"
 							onClick={(event) => clearFilter(event)}
 						>
 							Clear
