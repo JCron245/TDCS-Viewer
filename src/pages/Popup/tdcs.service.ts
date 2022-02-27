@@ -53,7 +53,13 @@ export const iterate = (obj: any, key: string): any => {
 	}
 };
 
-export const getTDCS = (portal: "RESI" | "SMB", version: string, env: string): Promise<string> => {
+export type TdcsResponse = {
+	result: string;
+	error: boolean;
+	msg?: string;
+}
+
+export const getTDCS = (portal: "RESI" | "SMB", version: string, env: string): Promise<TdcsResponse> => {
 	apiCallData.apiKey = portal === 'RESI' ? "PORTALS" : "SMB";
 	apiCallData.clientType = `ACCTSUPP-${portal}`;
 	apiCallData.appVersion = `${version}`;
@@ -65,15 +71,15 @@ export const getTDCS = (portal: "RESI" | "SMB", version: string, env: string): P
 		body: JSON.stringify(apiCallData),
 	};
 
-	return fetch(apiUrls[portal][env], requestOptions)
+	return fetch(apiUrls?.[portal]?.[env], requestOptions)
 		.then((res) => res.json())
 		.then(
 			(result) => {
 				let newOutput = result;
-				return JSON.stringify(newOutput, null, 2);
+				return { result: JSON.stringify(newOutput, null, 2), error: false };
 			},
 			(error) => {
-				return error.message;
+				return { msg: error.message, error: true, result: '' };
 			}
 		);
 };

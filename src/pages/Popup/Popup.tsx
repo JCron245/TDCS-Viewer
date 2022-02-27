@@ -54,18 +54,27 @@ export const Popup = () => {
 		if (!version) {
 			setError(`🛑 Missing Value For Version Field`);
 			return;
-		}
-		if (!/^[\d]{2,3}.?\d?$/.test(version)) {
+		} else if (!/^[\d]{2,3}.?\d?$/.test(version)) {
 			setError(`🛑 Version Field Is Not Valid`);
 			return;
+		} else {
+			setError(null);
 		}
 
-		getTDCS(portal, version, env).then((res) => {
-			setFetchResults(res);
-			setOutput(res);
-			setKey('');
-			setTimestamp(new Date().toLocaleString());
-		});
+		getTDCS(portal, version, env)
+			.then((res) => {
+				if (res.error) {
+					setError(`🛑 ${res.msg}`);
+				} else {
+					setFetchResults(res.result);
+					setOutput(res.result);
+				}
+				setKey('');
+				setTimestamp(new Date().toLocaleString());
+			})
+			.catch((e) => {
+				setError(`🛑 ${e}`);
+			});
 	};
 
 	const filterTdcs = () => {
